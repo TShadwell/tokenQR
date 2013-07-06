@@ -1,0 +1,60 @@
+@import url(https://fonts.googleapis.com/css?family=PT+Sans+Caption:700);
+/* line 6, ../sass/add.scss */
+.t {
+  display: none;
+}
+
+/* line 10, ../sass/add.scss */
+#typeselector, input {
+  position: relative;
+}
+
+/* line 14, ../sass/add.scss */
+body {
+  max-width: 700px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 3em;
+}
+
+/* line 22, ../sass/add.scss */
+* {
+  font-family: "PT Sans Caption";
+  font-weight: 700;
+}
+
+/* line 29, ../sass/add.scss */
+#typeselector {
+  width: 100%;
+  text-align: center;
+  margin-top: 2em;
+  border-bottom: 0.2em solid black;
+  border-top: 0.2em solid black;
+}
+
+/* line 38, ../sass/add.scss */
+label {
+  padding: 0.2em;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-in;
+  -webkit-transition-delay: 0s;
+  -moz-transition: all 0.2s ease-in 0s;
+  -o-transition: all 0.2s ease-in 0s;
+  transition: all 0.2s ease-in 0s;
+}
+
+/* line 48, ../sass/add.scss */
+input:checked + label {
+  background-color: #fb292d;
+}
+
+/* line 52, ../sass/add.scss */
+input {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0px;
+  border-bottom: 0.2em solid black;
+  font-size: 1em;
+}

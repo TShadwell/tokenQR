@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<head>
+	<title>Purporse a QR token</title>
+	
+	<link rel="stylesheet" type="text/css" href="stylesheets/add.css"/>
+</head>
+<body>
+	<form action="add">
+
+		<div class="pair">
+			<label>Identifier</label>
+			<input name="qrid" type="text"/>
+		</div>
+
+		<div class="pair">
+			<label>Text</label>
+			<input name="name" type="text"/>
+		</div>
+		
+		<div id="typeselector">
+			<input class="t" name="type" type="radio" value="0" id="file" size="4"/>
+			<label for="file">File</label>
+			<input class="t" name="type" type="radio" value="1" id="timer"/>
+			<label for="timer">Timer</label>
+			<input class="t" name="type" type="radio" value="1" id="text" checked/>
+			<label for="text">Text</label>
+		</div>
+
+	</form>
+</body>
