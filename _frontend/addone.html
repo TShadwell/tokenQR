@@ -8,23 +8,35 @@
 	<form action="add">
 
 		<div class="pair">
-			<label>Identifier</label>
-			<input name="qrid" type="text"/>
+			<label for="qrid">Identifier</label>
+			<input name="qrid" type="text" id="qrid" />
+			<div class="ann"></div>
 		</div>
 
 		<div class="pair">
-			<label>Text</label>
-			<input name="name" type="text"/>
+			<label for="name">Name</label>
+			<input name="name" type="text" id="name"/>
+			<div class="ann"></div>
+		</div>
+
+
+
+		<div id="dragenter">
+			
 		</div>
 		
 		<div id="typeselector">
-			<input class="t" name="type" type="radio" value="0" id="file" size="4"/>
-			<label for="file">File</label>
-			<input class="t" name="type" type="radio" value="1" id="timer"/>
-			<label for="timer">Timer</label>
-			<input class="t" name="type" type="radio" value="1" id="text" checked/>
-			<label for="text">Text</label>
+			<input class="t" name="type" type="radio" value="0" id="fileT" size="4" checked/>
+			<label for="fileT">File</label>
+			<input class="t" name="type" type="radio" value="1" id="timerT"/>
+			<label for="timerT">Timer</label>
+		</div>
+
+		<div id="filecontrol">
+			Please drag and drop a file here or <input type="file" name="file" id="file" />
 		</div>
 
 	</form>
+
+	<script type="text/javascript" src="js/add.js"></script>
 </body>

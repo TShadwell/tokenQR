@@ -1,42 +1,45 @@
+@charset "UTF-8";
 @import url(https://fonts.googleapis.com/css?family=PT+Sans+Caption:700);
-/* line 6, ../sass/add.scss */
+/*
+	Yes, I'm using ligatures, they do not work in  IE9:
+	It's a hackathon, the cross-browser support can come later!
+
+	Though, it would be really wonderful if we could use them already,
+	they make a wonderful streight to ASCII mapping when the font goes missing.
+
+	I'm a big fan of using representative unicode symbols, but that takes
+	more time searching through the unicode pages than I have.
+*/
+@font-face {
+  font-family: 'icn';
+  src: url("../fonts/icn.eot");
+  src: url("../fonts/icn.eot?#iefix") format("embedded-opentype"), url("../fonts/icn.woff") format("woff"), url("../fonts/icn.ttf") format("truetype"), url("../fonts/icn.svg#icn") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*
+	File
+	✓
+	✘
+	Image
+	Text
+	!
+	✎
+	Audio
+*/
+/* line 46, ../sass/add.scss */
 .t {
   display: none;
 }
 
-/* line 10, ../sass/add.scss */
-#typeselector, input {
+/* line 50, ../sass/add.scss */
+.pair, #typeselector, input, #filecontrol {
   position: relative;
 }
 
-/* line 14, ../sass/add.scss */
-body {
-  max-width: 700px;
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 3em;
-}
-
-/* line 22, ../sass/add.scss */
-* {
-  font-family: "PT Sans Caption";
-  font-weight: 700;
-}
-
-/* line 29, ../sass/add.scss */
-#typeselector {
-  width: 100%;
-  text-align: center;
-  margin-top: 2em;
-  border-bottom: 0.2em solid black;
-  border-top: 0.2em solid black;
-}
-
-/* line 38, ../sass/add.scss */
-label {
-  padding: 0.2em;
-  cursor: pointer;
+/* line 54, ../sass/add.scss */
+#filecontrol > input {
   -webkit-transition: all 0.2s ease-in;
   -webkit-transition-delay: 0s;
   -moz-transition: all 0.2s ease-in 0s;
@@ -44,17 +47,109 @@ label {
   transition: all 0.2s ease-in 0s;
 }
 
-/* line 48, ../sass/add.scss */
+/* line 62, ../sass/add.scss */
+body {
+  max-width: 700px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 3em;
+  color: #1f1f1f;
+}
+
+/* line 71, ../sass/add.scss */
+* {
+  font-family: "PT Sans Caption";
+  font-weight: 700;
+}
+
+/* line 78, ../sass/add.scss */
+#typeselector {
+  width: 100%;
+  text-align: center;
+  margin-top: 2em;
+  border-bottom: 0.2em solid #1f1f1f;
+  border-top: 0.2em solid #1f1f1f;
+}
+
+/* line 87, ../sass/add.scss */
+label {
+  padding: 0.2em;
+}
+
+/* line 95, ../sass/add.scss */
 input:checked + label {
   background-color: #fb292d;
 }
 
-/* line 52, ../sass/add.scss */
+/* line 99, ../sass/add.scss */
 input {
   display: block;
+  max-width: 100%;
   margin-left: auto;
+  overflow: hidden;
   margin-right: auto;
   border: 0px;
-  border-bottom: 0.2em solid black;
+  border-bottom: 0.2em solid #1f1f1f;
   font-size: 1em;
+}
+/* line 109, ../sass/add.scss */
+input ~ .ann {
+  position: absolute;
+  top: 0;
+  right: 0.2em;
+  color: #1f1f1f;
+}
+/* line 114, ../sass/add.scss */
+input ~ .ann:before {
+  content: "✎";
+  font-family: "icn", sans-serif;
+  text-shadow: 1px 1px 4px #9e9e9e;
+}
+/* line 120, ../sass/add.scss */
+input.okay ~ .ann:before, input.fail ~ .ann:before {
+  font-size: 0.8em;
+}
+/* line 123, ../sass/add.scss */
+input.typing ~ .ann:before {
+  content: "⋯";
+}
+/* line 126, ../sass/add.scss */
+input.fail {
+  border-color: red;
+  border-style: #fb292d;
+}
+/* line 129, ../sass/add.scss */
+input.fail ~ .ann:before {
+  color: #fb292d;
+  content: "✘";
+}
+/* line 134, ../sass/add.scss */
+input.okay ~ .ann:before {
+  color: #53fb29;
+  content: "✓";
+}
+
+/* line 140, ../sass/add.scss */
+.symbol {
+  font-family: "icn", sans-serif;
+}
+
+/* line 146, ../sass/add.scss */
+#filecontrol {
+  margin-top: 1.6em;
+  text-align: center;
+  width: 100%;
+  font-size: 0.3em;
+}
+/* line 152, ../sass/add.scss */
+#filecontrol > input {
+  border: 0;
+  display: inline;
+  cursor: pointer;
+}
+
+/* line 159, ../sass/add.scss */
+#dragenter {
+  display: none;
 }
